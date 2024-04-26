@@ -1,16 +1,25 @@
-import React,{useCallback,useState} from 'react'
-import '../styles/App.css';
-import useToggle from './useToggle.js'
-const App = () => {
+import React from 'react';
 
-  
+import useToggle from './useToggle'; // make sure the path is correct based on your project structure
 
-    const [isTextChanged, setIsTextChanged] = useToggle();
+function App() {
 
-  return(
-        <button id='button' onClick={setIsTextChanged}>{isTextChanged ? 'Toggled' : 'Click to Toggle'}</button>
-    );
+const [toggled, toggle] = useToggle();
+
+return (
+
+<div>
+
+<button id="button" onClick={toggle}>
+
+{toggled ? 'Toggled' : 'Click to Toggle'}
+
+</button>
+
+</div>
+
+);
+
 }
-
 
 export default App;
